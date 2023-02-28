@@ -160,6 +160,7 @@ const StyledProject = styled.li`
     background-color: var(--light-navy);
     color: var(--light-slate);
     font-size: var(--fz-lg);
+    text-align: left;
 
     @media (max-width: 768px) {
       padding: 20px 0;
@@ -321,8 +322,9 @@ const Featured = () => {
               }
               tech
               github
+              android
+              ios
               external
-              cta
             }
             html
           }
@@ -355,7 +357,7 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
+            const { external, title, tech, github, cover, android, ios } = frontmatter;
             const image = getImage(cover);
 
             return (
@@ -380,11 +382,15 @@ const Featured = () => {
                         ))}
                       </ul>
                     )}
-
                     <div className="project-links">
-                      {cta && (
-                        <a href={cta} aria-label="Course Link" className="cta">
-                          Learn More
+                      {android && (
+                        <a href={android} aria-label="Android Link">
+                          <Icon name="Android" />
+                        </a>
+                      )}
+                      {ios && (
+                        <a href={ios} aria-label="IOS Link">
+                          <Icon name="IOS" />
                         </a>
                       )}
                       {github && (
@@ -392,7 +398,7 @@ const Featured = () => {
                           <Icon name="GitHub" />
                         </a>
                       )}
-                      {external && !cta && (
+                      {external && (
                         <a href={external} aria-label="External Link" className="external">
                           <Icon name="External" />
                         </a>
