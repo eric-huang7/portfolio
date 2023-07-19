@@ -8,7 +8,7 @@ module.exports = {
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/eric-s-huang-51a5481ab',
+      url: 'https://www.linkedin.com/in/eric-huang-51a5481ab',
     },
   ],
 
